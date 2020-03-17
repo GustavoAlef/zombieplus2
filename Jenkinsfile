@@ -2,6 +2,7 @@ pipeline {
    agent {
       docker {
          image "dkthread/node-wd"
+         args "--network = skynet"
       }
    }
 
