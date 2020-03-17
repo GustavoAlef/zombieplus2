@@ -16,7 +16,11 @@ pipeline {
       stage("Tests") {
          steps{
           sh "npm run test:ci"
-          junit testDataPublishers:[[$class: 'AttachmentPublisher']], testResults: "tests_output/**/*.xml"
+         }
+         post {
+            always {
+               junit testDataPublishers:[[$class: 'AttachmentPublisher']], testResults: "tests_output/**/*.xml"
+            }
          }
       }
    }
