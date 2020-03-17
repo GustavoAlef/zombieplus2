@@ -2,7 +2,7 @@ let loginActions = {
   using: function (email, senha) {
     return this
       .navigate()
-      .waitForElementPresent("@formLogin", 3000)
+      .waitForElementPresent("@formLogin", 10000)
       .setValue("@inputEmail", email)
       .setValue("@inputPass", senha)
       .click("@btnLogin")
@@ -10,13 +10,13 @@ let loginActions = {
   },
   expectAlertDanger: function(texto){
       return this
-      .waitForElementPresent("@alertDanger", 3000)
+      .waitForElementPresent("@alertDanger", 10000)
       .assert.containsText("@alertDanger", texto)
       .pause(1000);
   },
   expectAlertInfo: function(texto){
       return this
-      .waitForElementPresent("@alertInfo", 3000)
+      .waitForElementPresent("@alertInfo", 10000)
       .assert.containsText("@alertInfo", texto)
       .pause(1000);
   }

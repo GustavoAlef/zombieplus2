@@ -2,7 +2,7 @@ let actions = {
   goToForm: function(){
       return this
     .click("@btnAdd")
-    .waitForElementPresent("@formMovie", 3000)
+    .waitForElementPresent("@formMovie", 10000)
     },
 
   selectStatus: function(status) {
@@ -10,7 +10,7 @@ let actions = {
     .click("@selectStatus")
     .useXpath()
     .waitForElementPresent(`//li//span[contains(text(), 
-    "${status}")]`, 3000)
+    "${status}")]`, 10000)
       .click(`//li//span[contains(text(), 
     "${status}")]`)
     .useCss();
