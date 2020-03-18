@@ -9,7 +9,7 @@
     "test:group": "./node_modules/.bin/nightwatch --group login",
     "test:firefox": "./node_modules/.bin/nightwatch --env=firefox",
     "test:headless": "./node_modules/.bin/nightwatch --env=headless",
-    "test:ci": "./node_modules/.bin/nightwatch --tag login --env=headless"
+    "test:ci": "./node_modules/.bin/nightwatch --tag 404 --env=headless"
   },
 
   "author": "Gustavo Alef",

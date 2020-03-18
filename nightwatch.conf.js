@@ -16,12 +16,12 @@ module.exports = {
     start_process: true,
   },
 
-  screenshots: {
-    enabled: true,
-    on_failure: true,
-    on_error: true,
-    path: 'tests_output/'
-  },
+  // screenshots: {
+  //   enabled: true,
+  //   on_failure: true,
+  //   on_error: true,
+  //   path: 'tests_output/'
+  // },
 
   test_settings: {
     default: {
