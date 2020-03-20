@@ -14,7 +14,7 @@ module.exports = {
           const currentAssertion = assertions[assertions.length - 1];
           if (currentAssertion) {
             currentAssertion.screenshots = currentAssertion.screenshots || [];
-            currentAssertion.screenshots.push(shotpath);
+            currentAssertion.screenshots.push(shotpath); 
           }
         }
       })
