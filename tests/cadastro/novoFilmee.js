@@ -1,21 +1,29 @@
 import pg from '../../lib/db'
+import faker from "faker"
 let movieData = {};
 
 module.exports = {
-  '@tags':["filme"],
+  '@tags': ['addmovie'],
+  '@disabled': true,
 
   before: async browser => {
+    faker.locale = "pt_BR"
+    const title = faker.commerce.productName();
+    const releaseDate = faker.date.between(2000, 2010);
+    const plot = faker.lorem.sentence(5);
+    
     movieData = {
-      title: "Resident Evil",
+      title,
       status: "Disponível",
       year: 2002,
-      releaseDate: "01/05/2002",
+      releaseDate,
       cast: ["Milla", "Ali", "Ian", "Shawn"],
       cover: "resident-evil-2002.jpg",
-      plot: "A missao é desligar a rainha vermelha."
+      plot
     };
 
-    await pg.removeByTitle(movieData.title)
+    // await pg.removeByTitle(movieData.title)
+    await pg.insertMovie(movieData)
 
     let pgLogin = browser.page.login();
     let sidebar = browser.page.sidebar();

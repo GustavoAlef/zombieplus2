@@ -3,6 +3,8 @@ let movieData = {}
 
 module.exports = {
 // '@disabled': true,
+'@tags': ["busca"],
+
   before: async browser => {
     movieData = {
       title: "Meu namorado é um zumbi",
